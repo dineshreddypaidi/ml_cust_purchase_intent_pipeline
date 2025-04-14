@@ -213,7 +213,7 @@ class ModelPipeline():
             data = request.get_json()
             features = pd.DataFrame(data['data'])
             prediction = model.predict(features)
-            return jsonify({'prediction': prediction})
+            return jsonify({'prediction': int(prediction[0])})
 
         return app
     
